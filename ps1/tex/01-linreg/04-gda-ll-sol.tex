@@ -1,2 +1,50 @@
 \begin{answer}
+    $$
+    \begin{aligned}
+        \ell(\phi, \mu_{0}, \mu_1, \Sigma) 
+        &= \log \prod_{i=1}^m p(x^{(i)} , y^{(i)};\phi, \mu_{0}, \mu_1, \Sigma) \\
+        &= \log \prod_{i=1}^m p(x^{(i)} | y^{(i)}; \mu_{0}, \mu_1, \Sigma) p(y^{(i)};\phi)\\
+        &=\sum_{i = 1}^m \log{p(x^{(i)} | y^{(i)}; \mu_{0}, \mu_1, \Sigma)} + \sum_{i = 1}^m \log p(y^{(i)};\phi) \\
+        &=-\frac{mn}{2}\log{2\pi}--\frac{m}{2}\log{|\Sigma|}-
+        \frac{1}{2}\sum_{i=1}^m(x^{(i)}-\mu_{y^{(i)}})^T\Sigma^{-1}(x^{(i)}-\mu_{y^{(i)}})\\
+        &+\sum_{i=1}^m \left(y^{(i)}\log{\phi}+(1-y^{(i)})\log{(1-\phi)}\right)
+    \end{aligned}\\
+    $$
+
+    $$
+    \begin{aligned}
+        \frac{\partial\ell}{\partial \phi} &=0+\left(\frac{\sum_{i = 1}^m 1\{y^{(i)}=1\}}{\phi}-\frac{\sum_{i = 1}^m 1\{y^{(i)}=0\}}{1-\phi}\right)\\
+        &=\frac{\sum_{i = 1}^m 1\{y^{(i)}=1\}-\sum_{i = 1}^m 1\{y^{(i)}=1\}\phi-\sum_{i = 1}^m 1\{y^{(i)}=0\}\phi}{\phi(1-\phi)} \\
+        &=\frac{\sum_{i = 1}^m 1\{y^{(i)}=1\}-m\phi}{\phi(1-\phi)}\\
+        \ \\
+        \frac{\partial\ell}{\partial \mu_0} &= \frac{\partial\ell}{\partial \mu_{y^{(i)}}}\frac{\partial\mu_{y^{(i)}}}{\partial \mu_0} \\
+        &=\sum_{i = 1}^m\frac{x^{(i)}-\mu_{y^{(i)}}}{|\Sigma|}1\{y^{(i)}=0\}\\
+        &=\frac{\sum_{i = 1}^m1\{y^{(i)}=0\}x^{(i)}-\sum_{i = 1}^m1\{y^{(i)}=0\}\mu_0}{|\Sigma|}\\
+        \ \\
+        \frac{\partial\ell}{\partial \mu_1} &=\frac{\sum_{i = 1}^m1\{y^{(i)}=1\}x^{(i)}-\sum_{i = 1}^m1\{y^{(i)}=1\}\mu_1}{|\Sigma|}\\
+        \ \\
+        \frac{\partial \ell}{\partial\Sigma} &= \frac{\partial}{\partial \Sigma}\left(\sum_{i = 1}^m(-\frac{1}{2}\log{\Sigma-\frac{(x^{(i)}-\mu_{y^{(i)}})^T(x^{(i)}-\mu_{y^{(i)}})}{2\Sigma}}) \right) \\
+        &=-\frac{1}{2}\left(\frac{m}{\Sigma}-\frac{\sum_{i = 1}^m(x^{(i)}-\mu_{y^{(i)}})^T(x^{(i)}-\mu_{y^{(i)}})}{\Sigma^2} \right) \\
+        &=-\frac{m\Sigma-\sum_{i = 1}^m(x^{(i)}-\mu_{y^{(i)}})^T(x^{(i)}-\mu_{y^{(i)}})}{2\Sigma^2}\\
+    \end{aligned}  \\
+    $$
+    
+    $$
+    \begin{aligned}
+        \frac{\partial\ell}{\partial \phi} &= 0\\
+        \frac{\partial\ell}{\partial \mu_0} &= 0\\
+        \frac{\partial\ell}{\partial \mu_1} &= 0\\
+        \frac{\partial\ell}{\partial \Sigma} &= 0\\
+    \end{aligned}
+    \Rightarrow 
+    \begin{aligned}
+        \phi &= \frac{1}{m} \sum_{i=1}^m 1\{y^{(i)} = 1\} \\
+        \mu_{0} &= \frac{\sum_{i=1}^m 1\{y^{(i)} = {0}\} x^{(i)}}{\sum_{i=1}^m
+            1\{y^{(i)} = {0}\}} \\
+        \mu_1 &= \frac{\sum_{i=1}^m 1\{y^{(i)} = 1\} x^{(i)}}{\sum_{i=1}^m 1\{y^{(i)}
+        = 1\}} \\
+        \Sigma &= \frac{1}{m} \sum_{i=1}^m (x^{(i)} - \mu_{y^{(i)}}) (x^{(i)} -
+        \mu_{y^{(i)}})^T
+    \end{aligned}
+    $$
 \end{answer}

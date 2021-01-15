@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1610717702 "/home/wang/cs229/ps1/tex/ps1.tex" "/home/wang/cs229/ps1/tex/ps1.pdf" "ps1" 1610717703
+["pdflatex"] 1610725676 "/home/wang/cs229/ps1/tex/ps1.tex" "/home/wang/cs229/ps1/tex/ps1.pdf" "ps1" 1610725677
   "/etc/texmf/web2c/texmf.cnf" 1610654207 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/wang/cs229/ps1/tex/ps1.aux" 1610717703 51 37aa701000839b123a1beab808ca8daa ""
+  "/home/wang/cs229/ps1/tex/ps1.aux" 1610725677 51 e5e7f918cdd8121c647691e3210af8bd ""
   "/home/wang/cs229/ps1/tex/ps1.tex" 1610699439 3383 da1de8abe960195118c9b8b8fe66bbeb ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -96,7 +96,7 @@
   "01-linreg/02-solve-logreg.tex" 1610699439 570 08d78ebbda8cf6ae132e230915cf192d ""
   "01-linreg/03-gda-sol.tex" 1610717701 1031 efca6b975ffa87f8f04e76680d03050b ""
   "01-linreg/03-gda.tex" 1610699439 1140 8ed23f40f03f1db51ff7a6b05f5e7d0e ""
-  "01-linreg/04-gda-ll-sol.tex" 1610699439 28 e3bce0cc248592e7dce011faba9b3634 ""
+  "01-linreg/04-gda-ll-sol.tex" 1610725676 2693 9026719b8ea090a347cceb3c57201127 ""
   "01-linreg/04-gda-ll.tex" 1610699439 1417 7f260cdc5637ff55d2cb0497621b1236 ""
   "01-linreg/05-solve-gda-sol.tex" 1610699439 28 e3bce0cc248592e7dce011faba9b3634 ""
   "01-linreg/05-solve-gda.tex" 1610699439 349 d059f62dd4405e736a64c23f8a9a2532 ""
@@ -140,11 +140,11 @@
   "05-weighted/02-impl.tex" 1610699439 916 ac1e632c490c454e225fd77683a6c86e ""
   "05-weighted/03-tau-sol.tex" 1610699439 28 e3bce0cc248592e7dce011faba9b3634 ""
   "05-weighted/03-tau.tex" 1610699439 582 d5fb65e09e51652b7d7f956f28bf5143 ""
-  "ps1.aux" 1610717703 51 37aa701000839b123a1beab808ca8daa "pdflatex"
+  "ps1.aux" 1610725677 51 e5e7f918cdd8121c647691e3210af8bd "pdflatex"
   "ps1.tex" 1610699439 3383 da1de8abe960195118c9b8b8fe66bbeb ""
   (generated)
   "ps1.log"
-  "ps1.pdf"
-  "/home/wang/cs229/ps1/tex/ps1.log"
   "/home/wang/cs229/ps1/tex/ps1.pdf"
   "ps1.aux"
+  "ps1.pdf"
+  "/home/wang/cs229/ps1/tex/ps1.log"
