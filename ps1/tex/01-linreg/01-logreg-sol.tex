@@ -1,2 +1,14 @@
 \begin{answer}
+    $$
+    \begin{aligned}
+        \frac{\partial J(\theta)}{\partial\theta_j} &= -\frac{1}{m}\sum_{i = 1}^m 
+        y^{(i)}\frac{g(\theta^Tx^{(i)})(1-g(\theta^Tx^{(i)}))}{g(\theta^Tx^{(i)})}x^{(i)}_j-
+        (1-y^{(i)})\frac{g(\theta^Tx^{(i)})(1-g(\theta^Tx^{(i)})}{1-g(\theta^Tx^{(i)})}x^{(i)}_j\\
+        &= \frac{1}{m}\sum_{i = 1}^m(g(\theta^Tx^{(i)}) - y^{(i)})x^{(i)}_j\\
+        \frac{\partial^2 J(\theta)}{\partial\theta_j\partial \theta_k} &= \frac{1}{m}\sum_{i = 1}^m g(\theta^Tx^{(i)})(1-g(\theta^Tx^{(i)}))x^{(i)}_jx^{(i)}_k \\
+        &= \frac{1}{m}X^T(g(X\theta))(1-g(X\theta))^TX \\
+        z^THz &= \frac{1}{m}z^TX^Tg(X\theta)(1-g(X\theta))^TXz\\
+        &=\frac{1}{m}\sum_{i=1}^m g_i(X\theta)(1-g_i(X\theta))(Xz)_i^2 \ge 0\\
+    \end{aligned}
+    $$
 \end{answer}
