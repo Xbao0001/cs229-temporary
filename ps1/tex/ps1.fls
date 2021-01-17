@@ -191,6 +191,15 @@ INPUT /home/wang/cs229/ps1/tex/02-posonly/05-plot.tex
 INPUT /home/wang/cs229/ps1/tex/02-posonly/05-plot.tex
 INPUT /home/wang/cs229/ps1/tex/02-posonly/05-plot-sol.tex
 INPUT /home/wang/cs229/ps1/tex/02-posonly/05-plot-sol.tex
+INPUT /home/wang/cs229/ps1/tex/../src/output/p02c_pred.png
+INPUT ../src/output/p02c_pred.png
+INPUT ../src/output/p02c_pred.png
+INPUT /home/wang/cs229/ps1/tex/../src/output/p02d_pred.png
+INPUT ../src/output/p02d_pred.png
+INPUT ../src/output/p02d_pred.png
+INPUT /home/wang/cs229/ps1/tex/../src/output/p02e_pred.png
+INPUT ../src/output/p02e_pred.png
+INPUT ../src/output/p02e_pred.png
 INPUT /home/wang/cs229/ps1/tex/03-poisson/00-main.tex
 INPUT /home/wang/cs229/ps1/tex/03-poisson/00-main.tex
 INPUT /home/wang/cs229/ps1/tex/03-poisson/01-exponential.tex
