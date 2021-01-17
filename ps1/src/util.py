@@ -77,7 +77,9 @@ def plot(x, y, theta, save_path, correction=1.0):
 
     # Plot decision boundary (found by solving for theta^T x = 0)
     x1 = np.arange(min(x[:, -2]), max(x[:, -2]), 0.01)
-    x2 = -(theta[0] / theta[2] * correction + theta[1] / theta[2] * x1)
+    x2 = -(theta[0] / theta[2] + theta[1] / theta[2] * x1 + np.log((2 - correction) / correction) / theta[2])
+    # print(theta[0] / theta[2] * correction)
+    # print(theta[0]/theta[2] + np.log((2 - correction) / correction) / theta[2])
     plt.plot(x1, x2, c='red', linewidth=2)
 
     # Add labels and save to disk
