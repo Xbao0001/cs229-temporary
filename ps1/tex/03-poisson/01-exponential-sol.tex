@@ -1,2 +1,22 @@
 \begin{answer}
+    
+    exponential family can be written in the form:
+    $$
+        p(y; \eta) = b(y)\exp{(\eta^TT(y)-a(\eta))}
+    $$
+    note that:
+    $$
+            p(y; \lambda) = \frac{e^{-\lambda}\lambda^y}{y!}
+            =\frac{1}{y!}\exp(y\ln{\lambda}-\lambda)
+    $$
+    therefore, 
+    $$
+    \begin{aligned}
+        \eta    &= \ln{\lambda} \\
+        T(y)    &= y \\
+        a(\eta) &= \lambda \\
+                &= e^{\eta}\\
+            b(y)&=\frac{1}{y!}
+    \end{aligned}
+    $$
 \end{answer}
