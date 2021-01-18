@@ -1,2 +1,35 @@
 \begin{answer}
+    $$
+    \begin{aligned}
+        p(y^{(i)}\mid x^{(i)};\theta) &= \frac{e^{-\lambda}\lambda^{y^{(i)}}}{y^{(i)}!}      \\
+        &= \frac{e^{-e^{\eta}}e^{\eta y^{(i)}}}{y^{(i)}!} = \frac{e^{\eta y^{(i)}- e^{\eta}}}{y^{(i)}!}\\
+        &=\frac{e^{\theta^T x^{(i)}  y^{(i)}- e^{\theta^T x^{(i)}}}}{y^{(i)}!}
+    \end{aligned}
+    $$
+    so the log likelihood of an example is
+    $$
+    \begin{aligned}
+        \ell(\theta)
+        &= \log  p(y^{(i)}\mid x^{(i)};\theta)\\
+        &= \log \frac{e^{\theta^T x^{(i)}  y^{(i)}- e^{\theta^T x^{(i)}}}}{y^{(i)}!}\\
+        &= \theta^T x^{(i)}  y^{(i)}- e^{\theta^T x^{(i)}} - \log{(y^{(i)}!)}
+    \end{aligned}
+    $$
+    note that $h_\theta(x^{(i)}) = g(\eta) = e^{\eta}= e^{\theta^T x^{(i)}}$, hence,
+    $$
+    \begin{aligned}
+        \frac{\partial \ell(\theta)}{\partial \theta_j} 
+        &= x^{(i)}_j y^{(i)}_j - e^{\theta^T x^{(i)}}x^{(i)}_j \\
+        &= (y^{(i)}_j - e^{\theta^T x^{(i)}})x^{(i)}_j\\
+        &= (y^{(i)}_j - h_\theta(x^{(i)}))x^{(i)}_j\\
+    \end{aligned}
+    $$
+    in order to maximize the log likelihood with stochastic gradient ascent, the update rule is
+    $$
+    \theta_j:=\theta_j + \alpha (y^{(i)}_j - h_\theta(x^{(i)}))x^{(i)}_j \quad\text{(for every $j$)}
+    $$
+    it can be rewrite to
+    $$
+    \theta:=\theta + \alpha (y^{(i)} - h_\theta(x^{(i)}))x^{(i)} 
+    $$
 \end{answer}
