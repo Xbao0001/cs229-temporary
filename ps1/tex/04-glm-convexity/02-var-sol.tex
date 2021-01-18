@@ -1,2 +1,16 @@
 \begin{answer}
+    $$
+    \begin{aligned}
+        \frac{\partial}{\partial\eta}a(\eta) &= \mathbb{E}[Y\mid X; \eta] \\
+            &= \int p(y;\eta)y dy\\
+            &= \int b(y)\exp(\eta y - a(\eta))y dy\\
+            \frac{\partial^2}{\partial\eta^2}a(\eta) &= \frac{\partial}{\partial\eta}\int b(y)\exp(\eta y - a(\eta))y dy\\
+            &= \int \frac{\partial}{\partial\eta} b(y)\exp(\eta y - a(\eta))y dy\\
+            &= \int b(y)\exp(\eta y - a(\eta))(y - \frac{\partial}{\partial\eta}a(\eta))y dy\\
+            &= \int b(y)\exp(\eta y - a(\eta))y^2 dy - \frac{\partial}{\partial\eta}a(\eta)\int b(y)\exp(\eta y - a(\eta))y dy\\
+            &= \int p(y;\eta)y^2 dy - \frac{\partial}{\partial\eta}a(\eta)\int  p(y;\eta)y dy\\
+            &= \mathbb{E}[Y^2\mid X; \eta] - (\mathbb{E}[Y\mid X; \eta])^2\\
+            &= \text{Var}(Y; \eta)
+        \end{aligned}
+    $$
 \end{answer}

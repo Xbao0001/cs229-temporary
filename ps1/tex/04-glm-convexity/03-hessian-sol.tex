@@ -1,2 +1,19 @@
 \begin{answer}
+    $$
+    \begin{aligned}
+        L(\theta) &= \prod_{i = 1}^m p(y^{(i)};\eta)\\
+        &= \prod_{i = 1}^m b(y^{(i)})\exp(\eta y^{(i)} - a(\eta))\\
+        \text{so the NLL} \quad
+        \ell(\theta) &= \sum_{i=1}^m -\log{b(y^{(i)})} + a(\eta) - \eta y^{(i)} \quad (\eta = \theta^Tx^{(i)})\\
+        \frac{\partial \ell(\theta)}{\partial \theta_j} &= \sum_{i=1}^m \frac{\partial a(\eta)}{\partial \eta}\frac{\partial\eta}{\partial\theta_j}-y^{(i)}\frac{\partial\eta}{\partial\theta_j}\\
+        &= \sum_{i=1}^m (\frac{\partial a(\eta)}{\partial \eta}-y^{(i)})\frac{\partial\eta}{\partial\theta_j}\\
+        &= \sum_{i=1}^m (\frac{\partial a(\eta)}{\partial \eta}-y^{(i)})x^{(i)}_j\\
+        \frac{\partial^2 \ell(\theta)}{\partial \theta_j \partial \theta_k} &= \frac{\partial}{\partial\theta_k}\sum_{i=1}^m (\frac{\partial a(\eta)}{\partial \eta}-y^{(i)})x^{(i)}_j\\
+        &= \sum_{i=1}^m \frac{\partial^2 a(\eta)}{\partial \eta^2}\frac{\partial\eta}{\partial\theta_k}x^{(i)}_j\\
+        &= \sum_{i=1}^m \frac{\partial^2 a(\eta)}{\partial \eta^2}x^{(i)}_jx^{(i)}_k\\
+        \quad \\
+        H &= \nabla^2_\theta\ell(\theta) = \nabla^2_\theta a(\eta) X^TX \\
+    \end{aligned}
+    $$
+    For any none zero vector z $\in \mathbb{R}^n,\ z^THz = \nabla^2_\theta a(\eta) (Xz)^TXz \ge 0$, so $H$ is always $PSD$. 
 \end{answer}
