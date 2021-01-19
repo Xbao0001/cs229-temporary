@@ -1,2 +1,39 @@
 \begin{answer}
+
+    i. $W = \frac{1}{2}\text{diag}\{w^{(1)}, w^{(2)}, \cdots, w^{(m)}\}$\\
+    
+    ii.
+    $$
+    \begin{aligned}
+        \nabla_\theta J(\theta) &= \nabla_\theta (X\theta - {y})^T W (X\theta - {y})\\
+        &= \nabla_\theta (\theta^TX^TWX\theta  - y^TWX\theta - \theta^TX^TWy + y^TWy)\\
+        &= \nabla_\theta (\theta^TX^TWX\theta  - 2y^TWX\theta)\\
+        &= 2X^TWX\theta - 2X^TWy    \\
+    \end{aligned}
+    $$
+    let $\nabla_\theta J(\theta) = 0$, so we have
+    $$
+    \begin{aligned}
+        2X^TWX\theta - 2X^TWy = 0\\
+        \theta = (X^TWX)^{-1}X^TWy
+    \end{aligned}
+    $$
+    iii.
+    $$
+    \begin{aligned}
+        L(\theta) &= \prod_{i = 1}^m p(y^{(i)} | x^{(i)} ; \theta)\\
+        &= \prod_{i = 1}^m \frac{1}{\sqrt{2\pi}\sigma^{(i)}} \exp\left(-
+        \frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2(\sigma^{(i)})^2}\right)\\
+        \ell(\theta) &= \log{L(\theta)} \\
+        &= \sum_{i = 1}^m \left(-\frac{1}{2}\log{2\pi}-\log{\sigma^{(i)}} -
+        \frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2(\sigma^{(i)})^2} \right)\\
+    \end{aligned}
+    $$
+    In order to maximize the log likelihood $\ell(\theta)$, we need to minimize
+    $$
+        \sum_{i = 1}^m\frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2(\sigma^{(i)})^2}
+    $$
+    $$
+        w^{(i)} = \frac{1}{(\sigma^{(i)})^2}
+    $$
 \end{answer}
