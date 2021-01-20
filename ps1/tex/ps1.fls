@@ -245,6 +245,9 @@ INPUT /home/wang/cs229/ps1/tex/05-weighted/02-impl.tex
 INPUT /home/wang/cs229/ps1/tex/05-weighted/02-impl.tex
 INPUT /home/wang/cs229/ps1/tex/05-weighted/02-impl-sol.tex
 INPUT /home/wang/cs229/ps1/tex/05-weighted/02-impl-sol.tex
+INPUT /home/wang/cs229/ps1/tex/../src/output/p05b.png
+INPUT ../src/output/p05b.png
+INPUT ../src/output/p05b.png
 INPUT /home/wang/cs229/ps1/tex/05-weighted/03-tau.tex
 INPUT /home/wang/cs229/ps1/tex/05-weighted/03-tau.tex
 INPUT /home/wang/cs229/ps1/tex/05-weighted/03-tau-sol.tex
