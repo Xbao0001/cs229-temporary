@@ -30,6 +30,7 @@ def main(tau, train_path, eval_path):
     print(f"For tau = {tau}, MSE on the validation set is: {MSE}.")
 
     # Plot validation predictions on top of training set
+    plt.clf()
     plt.plot(x_train, y_train, 'bx', x_valid, y_pred, 'ro')
     plt.savefig('output/p05b.png')
     # No need to save predictions
