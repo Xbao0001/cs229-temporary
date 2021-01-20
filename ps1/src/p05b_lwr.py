@@ -27,13 +27,12 @@ def main(tau, train_path, eval_path):
     y_pred = lwr_model.predict(x_valid)
     m = y_pred.shape
     MSE = (y_valid - y_pred).T.dot(y_valid - y_pred) / m
-    print(f"MSE: {MSE}")
+    print(f"For tau = {tau}, MSE on the validation set is: {MSE}.")
 
     # Plot validation predictions on top of training set
     plt.plot(x_train, y_train, 'bx', x_valid, y_pred, 'ro')
     plt.savefig('output/p05b.png')
     # No need to save predictions
-
     # Plot data
 
     # *** END CODE HERE ***
