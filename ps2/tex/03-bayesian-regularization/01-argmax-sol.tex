@@ -1,2 +1,22 @@
 \begin{answer}
+
+    $$
+        \begin{aligned}
+            \theta_{\text{MAP}} 
+            &= \arg\max_\theta p(\theta \mid x, y) \\
+            &= \arg\max_\theta \frac{p(\theta, x, y)}{p(x, y)} \\
+            &= \arg\max_\theta p(\theta, x, y) \\
+        \end{aligned}
+    $$
+    \text{note that, $p(\theta) = p(\theta \mid x) = \frac{p(\theta, x)}{p(x)}$, }
+    $$
+        \\ \begin{aligned} 
+            \arg\max_\theta p(y\mid x, \theta) p(\theta) 
+            &= \arg\max_\theta\frac{p(\theta, x, y)}{p(x, \theta)}p(\theta) \\
+            &= \arg\max_\theta\frac{p(\theta, x, y)}{p(x, \theta)}\frac{p(\theta, x)}{p(x)}\\
+            &= \arg\max_\theta\frac{p(\theta, x, y)}{p(x)} \\
+            &= \arg\max_\theta p(\theta, x, y) \\
+        \end{aligned}
+    $$
+    $\therefore \theta_{\text{MAP}} =\arg\max_\theta p(y|x, \theta) p(\theta)$ 
 \end{answer}
