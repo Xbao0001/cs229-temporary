@@ -1,2 +1,19 @@
 \begin{answer}
+    $$
+    \begin{aligned}
+        \theta_{\text{MAP}} 
+        &=\arg\max_\theta p(y|x, \theta) p(\theta)\\
+        &=\arg\max_\theta\log{\prod_{i=1}^n \frac{1}{\sqrt{2\pi}\sigma}\exp{\left(-\frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2\sigma^2} \right)}} + \log{\left(\frac{1}{2\pi^{d/2}|\Sigma|}\exp{(-\frac{1}{2}\theta^T\Sigma^{-1}\theta)}\right)}\\
+        &=\arg\max_\theta\sum_{i=1}^n\log{\frac{1}{\sqrt{2\pi}\sigma}\exp{\left(-\frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2\sigma^2} \right)}} + \log{\left(\frac{1}{2\pi^{d/2}\eta^d}\exp{(\frac{\theta^T\theta}{2\eta^2})}\right)}\\
+        &=\arg\max_\theta\sum_{i=1}^n\left( -\frac{1}{2}\log{2\pi} - \frac{1}{2}\log{\sigma} -\frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2\sigma^2}\right) - \frac{d}{2}\log{2\pi}- d\log{\eta} - \frac{\theta^T\theta}{2\eta^2}\\
+        &=\arg\max_\theta -\sum_{i=1}^n\frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2\sigma^2} - \frac{\theta^T\theta}{2\eta^2}\\
+        &=\arg\min_\theta \sum_{i=1}^n\frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2\sigma^2} + \frac{\theta^T\theta}{2\eta^2}\\
+        &=\arg\min_\theta \frac{(\vec{y} - X\theta)^T(\vec{y} - X\theta)}{2\sigma^2} + \frac{\theta^T\theta}{2\eta^2}\\
+        &=\arg\min_\theta (\vec{y} - X\theta)^T(\vec{y} - X\theta) + \frac{\sigma^2}{\eta^2}||\theta||_2^2 \\
+        &=\arg\min_\theta (\vec{y} - X\theta)^T(\vec{y} - X\theta) + \gamma||\theta||_2^2 \quad (\gamma = \frac{\sigma^2}{\eta^2})\\
+        J(\theta) &= \frac{1}{2}{(\vec{y} - X\theta)^T(\vec{y} - X\theta)} +  \frac{\gamma}{2}{\theta^T\theta} \\
+        \nabla_\theta J(\theta) &= X^TX\theta-X^T\vec{y} + \gamma\theta = 0 \\
+        \theta &= (X^TX + \gamma I)^{-1}X^T\vec{y} \quad (\gamma = \frac{\sigma^2}{\eta^2})
+    \end{aligned}
+    $$
 \end{answer}

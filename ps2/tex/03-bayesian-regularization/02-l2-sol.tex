@@ -1,8 +1,11 @@
 \begin{answer}
     $$
     \begin{aligned}
-        \theta_{\text{MAP}} &=\arg\max_\theta p(y|x, \theta) p(\theta)\\
+        \theta_{\text{MAP}} 
+        &=\arg\max_\theta p(y|x, \theta) p(\theta)\\
         &=\arg\max_\theta\log{p(y|x, \theta)} + \log{p(\theta)}\\
+        &=\arg\max_\theta\log{p(y|x, \theta)} + \log{\left(\frac{1}{2\pi^{d/2}|\Sigma|}\exp{(-\frac{1}{2}\theta^T\Sigma^{-1}\theta)}\right)}\\
+        &=\arg\max_\theta\log{p(y|x, \theta)} + \log{\left(\frac{1}{2\pi^{d/2}\eta^d}\exp{(\frac{\theta^T\theta}{2\eta^2})}\right)}\\
         &=\arg\max_\theta\log{p(y|x, \theta)} - \frac{d}{2}\log{2\pi}- d\log{\eta} - \frac{\theta^T\theta}{2\eta^2}\\
         &=\arg\max_\theta\log{p(y|x, \theta)} - \frac{\theta^T\theta}{2\eta^2}\\
         &=\arg\min_\theta -\log{p(y|x, \theta)} + \frac{||\theta||_2^2}{2\eta^2}\\

@@ -1,2 +1,14 @@
 \begin{answer}
+    $$
+    \begin{aligned}
+        \theta_{\text{MAP}} 
+        &=\arg\max_\theta p(y|x, \theta) p(\theta)\\
+        &=\arg\max_\theta\log{\prod_{i=1}^n \frac{1}{\sqrt{2\pi}\sigma}\exp{\left(-\frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2\sigma^2} \right)}} + \log{\prod_{i = 1}^d \left({\frac{1}{2b}}\exp (-{\frac{|\theta^{(i)}|}{b})}\right)}\\
+        &=\arg\max_\theta\sum_{i=1}^n\left( -\frac{1}{2}\log{2\pi} - \frac{1}{2}\log{\sigma} -\frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2\sigma^2}\right) + \sum_{i = 1}^d \left(-\log{2b} -\frac{|\theta^{(i)}|}{b}\right) \\
+        &=\arg\max_\theta -\sum_{i=1}^n\frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2\sigma^2} - \frac{1}{b} \sum_{i = 1}^d |\theta^{(i)}| \\
+        &=\arg\min_\theta \frac{(\vec{y} - X\theta)^T(\vec{y} - X\theta)}{2\sigma^2} + \frac{1}{b} ||\theta||_1 \\
+        &=\arg\min_\theta (\vec{y} - X\theta)^T(\vec{y} - X\theta) + \frac{2\sigma^2}{b} ||\theta||_1\\
+        &=\arg\min_\theta ||X\theta - \vec{y}||^2_2 + \gamma||\theta||_1 \quad (\gamma = \frac{2\sigma^2}{b})  \\
+    \end{aligned}
+    $$
 \end{answer}
