@@ -1,2 +1,35 @@
 \begin{answer}
+    \begin{enumerate}
+
+        \item Yes, K is symmetric, $z^TKz = z^TK_1z + z^TK_2z \ge 0$, thus $K$ is PSD. 
+        \item No, K is symmetric, but $z^TKz = z^TK_1z - z^TK_2z$ isn't always $\ge0$, e.g. $K_2 = 2K_1$. 
+        \item Yes, K is symmetric, $z^TKz = az^TK_1z \ge 0$, thus $K$ is PSD. 
+        \item No, K is symmetric, $z^TKz = -az^TK_1z \le 0$, thus $K$ isn't PSD. 
+        \item Yes, $K_{i, j} = K_{1 i, j} \times K_{2i, j} = K_{1 j, i} \times K_{2j, i} = K_{j, i}$, so $K$ is symmetric.
+                $$
+                \begin{aligned}
+                    z^TKz &= \sum_i \sum_j z_iK_{i, j}z_j\\
+                    &= \sum_i \sum_j z_i K_{1 i, j}K_{2i, j}z_j \\
+                    &= \sum_i \sum_j z_i \phi_1(x^{(i)})^T\phi_1(x^{(j)}) \phi_2(x^{(i)})^T\phi_2(x^{(j)})z_j\\
+                    &= \sum_i \sum_j z_i \sum_a \phi_{1a}(x^{(i)})\phi_{1a}(x^{(j)}) \sum_b \phi_{2b}(x^{(i)}) \phi_{2b}(x^{(j)}) z_j \\
+                    &= \sum_a\sum_b\sum_i\sum_j z_i \phi_{1a}(x^{(i)}) \phi_{2b}(x^{(i)}) \phi_{1a}(x^{(j)}) \phi_{2b}(x^{(j)}) z_j\\
+                    &= \sum_a\sum_b\sum_i\left(z_i \phi_{1a}(x^{(i)}) \phi_{2b}(x^{(i)})\right)^2\\
+                    &\ge 0
+                \end{aligned}
+                $$
+        \item Yes, $K_{i, j} = f(x^{(i)})f(x^{(j)}) = f(x^{(j)})f(x^{(i)}) = K_{j, i}$, so $K$ is symmetric.
+        $$
+        \begin{aligned}
+            z^TKz &= z^TK_{i, j}z\\
+            &= \sum_i \sum_j z_if(x^{(i)})f(x^{(j)})z_j\\
+            &= \sum_i \left(z_if(x^{(i)})\right)^2\\
+            &\ge 0
+        \end{aligned}
+        $$
+        \item Yes. $K_{i, j} = K_3(\phi(x_i), \phi(x_j)) = K_3(\phi(x_j), \phi(x_i)) = K_{j, i}$, so $K$ is symmetric. \\
+        Note that $K(x,z) = K_3(\phi(x),\phi(z)) = K_3(y^{(i)}, y^{(j)})$ is PSD.
+        \item Yes. From (e), we know $K_1^i(i \in \mathbb{N})$ is PSD, From (c), wo know $aK_1^i(a > 0)$ is PSD,\\ 
+        Form (a), we know $\sum_{i = 0} a_i K_1^i$ is PSD.
+        
+    \end{enumerate}
 \end{answer}

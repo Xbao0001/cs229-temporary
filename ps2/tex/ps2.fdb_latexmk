@@ -1,9 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1612618687 "/home/wang/cs229/ps2/tex/ps2.tex" "/home/wang/cs229/ps2/tex/ps2.pdf" "ps2" 1612618687
+["pdflatex"] 1612624868 "/home/wang/cs229/ps2/tex/ps2.tex" "/home/wang/cs229/ps2/tex/ps2.pdf" "ps2" 1612624869
   "../src/output/dataset1_a.png" 1612598048 17329 1fffda86beea16f854b8ad44cdd7c7e6 ""
   "../src/output/dataset1_b.png" 1612598048 17137 9206556689a46288abb0da070d38bb02 ""
   "/etc/texmf/web2c/texmf.cnf" 1612596329 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/wang/cs229/ps2/tex/ps2.aux" 1612618687 289 e5e70e49b2fac2e9737b75bc93e5f07d ""
+  "/home/wang/cs229/ps2/tex/ps2.aux" 1612624869 289 e5e70e49b2fac2e9737b75bc93e5f07d ""
   "/home/wang/cs229/ps2/tex/ps2.tex" 1612241467 3389 f41a26aa3c03e8d717922c570b43a770 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -125,7 +125,7 @@
   "03-bayesian-regularization/03-closed-form.tex" 1612241467 604 8eacafb689817c79f7f7bfbabab2832d ""
   "03-bayesian-regularization/04-l1-sol.tex" 1612241467 1076 253bb0ba26079a125fb27736d7a3d201 ""
   "03-bayesian-regularization/04-l1.tex" 1612241467 1031 b703dbb90ade95496e26b35738710f6a ""
-  "04-kernels/00-main-sol.tex" 1612241467 27 af4fc42d458355e7e6df8673b4b475e9 ""
+  "04-kernels/00-main-sol.tex" 1612624868 2017 e627e070543b349fac2b2fe6382cad70 ""
   "04-kernels/00-main.tex" 1612241467 2506 417e619d1d874ba478aa1ac3e2ecf1b4 ""
   "05-perceptron/00-main.tex" 1612241467 1144 5dd77b8c5e1a1757422a60fdc9369d57 ""
   "05-perceptron/01-description-sol.tex" 1612241467 28 e3bce0cc248592e7dce011faba9b3634 ""
@@ -142,11 +142,11 @@
   "06-spam/03-five-best.tex" 1612241467 790 9d6c9f300b3ce4026af8babdd2b806ef ""
   "06-spam/04-svm-sol.tex" 1612241467 28 e3bce0cc248592e7dce011faba9b3634 ""
   "06-spam/04-svm.tex" 1612241467 760 b4fee253a3b4123610930e4050ba5cd5 ""
-  "ps2.aux" 1612618687 289 e5e70e49b2fac2e9737b75bc93e5f07d "pdflatex"
+  "ps2.aux" 1612624869 289 e5e70e49b2fac2e9737b75bc93e5f07d "pdflatex"
   "ps2.tex" 1612241467 3389 f41a26aa3c03e8d717922c570b43a770 ""
   (generated)
   "ps2.pdf"
-  "/home/wang/cs229/ps2/tex/ps2.log"
+  "ps2.log"
   "/home/wang/cs229/ps2/tex/ps2.pdf"
   "ps2.aux"
-  "ps2.log"
+  "/home/wang/cs229/ps2/tex/ps2.log"
