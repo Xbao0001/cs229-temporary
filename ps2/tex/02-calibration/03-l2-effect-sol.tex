@@ -1,2 +1,16 @@
 \begin{answer}
+    
+    It makes the property in (a) no longer true.
+    
+    Suppose we add $\lambda ||\theta||_2^2$ to $\ell(\theta)$
+    $$
+    \frac{\partial}{\partial \theta_j} \ell(\theta) = \sum_{i=1}^m (y^{(i)} - h_\theta(x^{(i)}))x^{(i)}_j + 2\lambda \theta_j\\
+$$  
+Let $\frac{\partial}{\partial \theta_j} \ell(\theta) = 0$, $j = 0$(thus for any i, $x^{(i)}_j = 1$), then
+$$
+    \sum_{i = 1}^m (y^{(i)} - h_\theta(x^{(i)})) + 2\lambda\theta_0 = 0 
+    $$
+    $$
+    \sum_{i = 1}^m h_\theta(x^{(i)}) = \sum_{i = 1}^m y^{(i)} + 2\lambda\theta_0 \\
+$$   
 \end{answer}

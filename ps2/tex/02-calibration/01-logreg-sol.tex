@@ -1,2 +1,13 @@
 \begin{answer}
+    $$
+        \frac{\partial}{\partial \theta_j} \ell(\theta) = \sum_{i=1}^m (y^{(i)} - h_\theta(x^{(i)}))x^{(i)}_j \\
+    $$  
+    Let $\frac{\partial}{\partial \theta_j} \ell(\theta) = 0$, $j = 0$(thus for any i, $x^{(i)}_j = 1$), then
+    $$
+    \begin{aligned}
+        \sum_{i = 1}^m (y^{(i)} - h_\theta(x^{(i)})) &= 0 \\
+        \sum_{i = 1}^m h_\theta(x^{(i)}) &= \sum_{i = 1}^m y^{(i)} \\
+    \end{aligned}
+    $$ 
+    which leads to the result we want to prove.
 \end{answer}
