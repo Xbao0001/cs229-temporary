@@ -1,2 +1,29 @@
 \begin{answer}
+    \begin{enumerate}
+        \item 
+        $$
+        \begin{aligned}
+            \theta^{(i+1)} :&=\theta^{(i)} + \alpha \left(y^{(i+1)} - h_{\theta^{(i)}}(\phi(x^{(i+1)}))\right) \phi(x^{(i+1)})\\
+            \theta^{(i)} &= \sum_{j = 1}^i\beta_j\phi(x^{(j)}) \\
+            \theta^{(0)} &= \vec{0} \\
+        \end{aligned}
+        $$
+        \item 
+        $$
+        \begin{aligned}
+            h_{\theta^{(i)}}(x^{(i+1)}) &= g\left({\theta^{(i)}}^T \phi(x^{(i+1)})\right)\\
+            &= g\left( \sum_{j = 1}^i\beta_j\phi(x^{(j)}) \cdot \phi(x^{(i+1)}) \right) \\
+            &= g\left( \sum_{j = 1}^i\beta_j K(x^{(j)}, x^{(i+1)})\right) \\
+        \end{aligned}
+        $$
+        \item 
+        $$
+        \begin{aligned}
+            \theta^{(i+1)} &:= \theta^{(i)} + \alpha (y^{(i+1)} - h_{\theta^{(i)}}(x^{(i+1)})) \phi(x^{(i+1)})         \\
+            \theta^{(i+1)} &:= \sum_{j = 1}^i\beta_j\phi(x^{(j)}) + \alpha (y^{(i+1)} - g( \sum_{j = 1}^i\beta_j K(x^{(j)}, x^{(i+1)})) \phi(x^{(i+1)})         \\
+            \sum_{j = 1}^{i+1}\beta_j\phi(x^{(j)}) &:= \sum_{j = 1}^i\beta_j\phi(x^{(j)}) + \alpha (y^{(i+1)} - g( \sum_{j = 1}^i\beta_j K(x^{(j)}, x^{(i+1)})) \phi(x^{(i+1)})         \\
+            \beta_{i+1} &:= \alpha (y^{(i+1)} - g( \sum_{j = 1}^i\beta_j K(x^{(j)}, x^{(i+1)}))       \\
+        \end{aligned}
+        $$
+    \end{enumerate}
 \end{answer}

@@ -197,6 +197,12 @@ INPUT /home/wang/cs229/ps2/tex/05-perceptron/03-failure.tex
 INPUT /home/wang/cs229/ps2/tex/05-perceptron/03-failure.tex
 INPUT /home/wang/cs229/ps2/tex/05-perceptron/03-failure-sol.tex
 INPUT /home/wang/cs229/ps2/tex/05-perceptron/03-failure-sol.tex
+INPUT /home/wang/cs229/ps2/tex/../src/output/p05_dot_output.pdf
+INPUT ../src/output/p05_dot_output.pdf
+INPUT ../src/output/p05_dot_output.pdf
+INPUT /home/wang/cs229/ps2/tex/../src/output/p05_rbf_output.pdf
+INPUT ../src/output/p05_rbf_output.pdf
+INPUT ../src/output/p05_rbf_output.pdf
 INPUT /home/wang/cs229/ps2/tex/06-spam/00-main.tex
 INPUT /home/wang/cs229/ps2/tex/06-spam/00-main.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
