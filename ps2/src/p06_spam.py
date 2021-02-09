@@ -161,6 +161,13 @@ def get_top_five_naive_bayes_words(model, dictionary):
     Returns: The top five most indicative words in sorted order with the most indicative first
     """
     # *** START CODE HERE ***
+    phi_k_1, phi_k_0, phi_y = model
+    
+    metric = np.log(phi_k_1 / phi_k_0)
+    indices = np.argsort(metric)[::-1][:5] # [::-1] -> reverse
+    idx2word = {v : k for k, v in dictionary.items()}
+    words = [idx2word[idx] for idx in indices]
+    return words
     # *** END CODE HERE ***
 
 
@@ -213,11 +220,11 @@ def main():
     print('Naive Bayes had an accuracy of {} on the testing set'.format(
         naive_bayes_accuracy))
 
-    # top_5_words = get_top_five_naive_bayes_words(naive_bayes_model, dictionary)
+    top_5_words = get_top_five_naive_bayes_words(naive_bayes_model, dictionary)
 
-    # print('The top 5 indicative words for Naive Bayes are: ', top_5_words)
+    print('The top 5 indicative words for Naive Bayes are: ', top_5_words)
 
-    # util.write_json('./output/p06_top_indicative_words', top_5_words)
+    util.write_json('./output/p06_top_indicative_words', top_5_words)
 
     # optimal_radius = compute_best_svm_radius(
     #     train_matrix, train_labels, val_matrix, val_labels, [0.01, 0.1, 1, 10])
