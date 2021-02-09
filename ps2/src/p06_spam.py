@@ -21,8 +21,7 @@ def get_words(message):
     """
 
     # *** START CODE HERE ***
-    words = []
-    words = message.lower().split(' ')
+    words = [word.lower() for word in message.split(" ")]
 
     return words
     # *** END CODE HERE ***
@@ -74,7 +73,6 @@ def create_dictionary(messages):
 
     # *** END CODE HERE ***
 
-
 def transform_text(messages, word_dictionary):
     """Transform a list of text messages into a numpy array for further processing.
 
@@ -95,14 +93,13 @@ def transform_text(messages, word_dictionary):
     # *** START CODE HERE ***
     m, n = len(messages), len(word_dictionary)
     text = np.zeros((m, n), dtype=np.int)
-    # np.savetxt('./output/p06_zero', text[:10, :10], fmt="%d")
 
     for i in range(m):
         words = get_words(messages[i])
         for word in words:
-            if word in word_dictionary:
-                text[i][word_dictionary[word]] += 1 
-
+            if word in word_dictionary.keys():
+                text[i, word_dictionary[word]] += 1 
+    
     return text
     # *** END CODE HERE ***
 
@@ -124,6 +121,11 @@ def fit_naive_bayes_model(matrix, labels):
     """
 
     # *** START CODE HERE ***
+    phi_k_1 = (1 + np.sum(matrix[labels == 1, :], axis=0)) / (2 + np.sum(matrix[labels == 1, :]))
+    phi_k_0 = (1 + np.sum(matrix[labels == 0, :], axis=0)) / (2 + np.sum(matrix[labels == 0, :]))
+    phi_y = sum(labels == 1)/ len(labels)
+
+    return phi_k_1, phi_k_0, phi_y
     # *** END CODE HERE ***
 
 
@@ -140,6 +142,9 @@ def predict_from_naive_bayes_model(model, matrix):
     Returns: A numpy array containg the predictions from the model
     """
     # *** START CODE HERE ***
+    phi_k_1, phi_k_0, phi_y = model
+
+    return np.exp(matrix.dot(np.log(phi_k_0.T) - np.log(phi_k_1.T))) <=  phi_y / (1 - phi_y)  
     # *** END CODE HERE ***
 
 
@@ -208,26 +213,26 @@ def main():
     print('Naive Bayes had an accuracy of {} on the testing set'.format(
         naive_bayes_accuracy))
 
-    top_5_words = get_top_five_naive_bayes_words(naive_bayes_model, dictionary)
+    # top_5_words = get_top_five_naive_bayes_words(naive_bayes_model, dictionary)
 
-    print('The top 5 indicative words for Naive Bayes are: ', top_5_words)
+    # print('The top 5 indicative words for Naive Bayes are: ', top_5_words)
 
-    util.write_json('./output/p06_top_indicative_words', top_5_words)
+    # util.write_json('./output/p06_top_indicative_words', top_5_words)
 
-    optimal_radius = compute_best_svm_radius(
-        train_matrix, train_labels, val_matrix, val_labels, [0.01, 0.1, 1, 10])
+    # optimal_radius = compute_best_svm_radius(
+    #     train_matrix, train_labels, val_matrix, val_labels, [0.01, 0.1, 1, 10])
 
-    util.write_json('./output/p06_optimal_radius', optimal_radius)
+    # util.write_json('./output/p06_optimal_radius', optimal_radius)
 
-    print('The optimal SVM radius was {}'.format(optimal_radius))
+    # print('The optimal SVM radius was {}'.format(optimal_radius))
 
-    svm_predictions = svm.train_and_predict_svm(
-        train_matrix, train_labels, test_matrix, optimal_radius)
+    # svm_predictions = svm.train_and_predict_svm(
+    #     train_matrix, train_labels, test_matrix, optimal_radius)
 
-    svm_accuracy = np.mean(svm_predictions == test_labels)
+    # svm_accuracy = np.mean(svm_predictions == test_labels)
 
-    print('The SVM model had an accuracy of {} on the testing set'.format(
-        svm_accuracy, optimal_radius))
+    # print('The SVM model had an accuracy of {} on the testing set'.format(
+    #     svm_accuracy, optimal_radius))
 
 
 if __name__ == "__main__":
