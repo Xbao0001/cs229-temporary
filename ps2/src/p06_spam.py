@@ -179,7 +179,7 @@ def compute_best_svm_radius(train_matrix, train_labels, val_matrix, val_labels, 
 
     Args:
         train_matrix: The word counts for the training data
-        train_labels: The spma or not spam labels for the training data
+        train_labels: The spam or not spam labels for the training data
         val_matrix: The word counts for the validation data
         val_labels: The spam or not spam labels for the validation data
         radius_to_consider: The radius values to consider
@@ -188,6 +188,13 @@ def compute_best_svm_radius(train_matrix, train_labels, val_matrix, val_labels, 
         The best radius which maximizes SVM accuracy.
     """
     # *** START CODE HERE ***
+    accuracy = []
+    for radius in radius_to_consider:
+        curr_pred = svm.train_and_predict_svm(train_matrix, train_labels, val_matrix, radius)
+        accuracy.append(np.mean(curr_pred == val_labels))
+    
+    # print(accuracy)
+    return radius_to_consider[np.argmax(accuracy)]
     # *** END CODE HERE ***
 
 
@@ -226,20 +233,20 @@ def main():
 
     util.write_json('./output/p06_top_indicative_words', top_5_words)
 
-    # optimal_radius = compute_best_svm_radius(
-    #     train_matrix, train_labels, val_matrix, val_labels, [0.01, 0.1, 1, 10])
+    optimal_radius = compute_best_svm_radius(
+        train_matrix, train_labels, val_matrix, val_labels, [0.01, 0.1, 1, 10])
 
-    # util.write_json('./output/p06_optimal_radius', optimal_radius)
+    util.write_json('./output/p06_optimal_radius', optimal_radius)
 
-    # print('The optimal SVM radius was {}'.format(optimal_radius))
+    print('The optimal SVM radius was {}'.format(optimal_radius))
 
-    # svm_predictions = svm.train_and_predict_svm(
-    #     train_matrix, train_labels, test_matrix, optimal_radius)
+    svm_predictions = svm.train_and_predict_svm(
+        train_matrix, train_labels, test_matrix, optimal_radius)
 
-    # svm_accuracy = np.mean(svm_predictions == test_labels)
+    svm_accuracy = np.mean(svm_predictions == test_labels)
 
-    # print('The SVM model had an accuracy of {} on the testing set'.format(
-    #     svm_accuracy, optimal_radius))
+    print('The SVM model had an accuracy of {} on the testing set'.format(
+        svm_accuracy, optimal_radius))
 
 
 if __name__ == "__main__":
