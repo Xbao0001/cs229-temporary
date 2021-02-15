@@ -1,2 +1,17 @@
 \begin{answer}
+    $$
+    \begin{aligned}
+        z_1^{(i)} &= W^{[1]}x^{(i)} + W^{[1]}_0\\
+        h^{(i)} &= f(z_1^{(i)}) = z_1^{(i)} \\
+        z_2^{(i)} &= W^{[2]}h^{(i)} + W^{[2]}_0\\
+        \quad \\
+        o^{(i)} &= f(z_2^{(i)})  \\
+        &= z_2^{(i)}\\
+        &= W^{[2]}h^{(i)} + W^{[2]}_0 \\
+        &= W^{[2]}z_1^{(i)} + W^{[2]}_0 \\
+        &= W^{[2]}(W^{[1]}x^{(i)} + W^{[1]}_0) + W^{[2]}_0 \\
+        &= W^{[2]}W^{[1]}x^{(i)} + W^{[2]}W^{[1]}_0 + W^{[2]}_0 \\
+    \end{aligned}
+    $$
+    So it's impossible, because the nerual network with the activation function $f(x) = x$ is linear w.r.t $x^{(i)}$, but the dataset is not linearly seperable.
 \end{answer}

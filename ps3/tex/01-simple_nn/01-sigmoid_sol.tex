@@ -1,2 +1,42 @@
 \begin{answer}
- \end{answer}
+
+    $$
+    \begin{aligned}
+        z_1^{(i)} &= W^{[1]}x^{(i)} + W^{[1]}_0\\
+        h^{(i)} &= \sigma(z_1^{(i)}) \\
+        z_2^{(i)} &= W^{[2]}h^{(i)} + W^{[2]}_0\\
+        o^{(i)} &= \sigma(z_2^{(i)})\\
+        l &= \frac{1}{m}\sum_{i=1}^m(o^{(i)} - y^{(i)})^2\\    
+    \end{aligned}
+    $$
+
+    $$
+    \begin{aligned}
+        \frac{\partial{l}}{\partial z_2^{(i)}} &= \frac{\partial{l}}{\partial o^{(i)}} \frac{\partial{o^{(i)}}}{\partial z_2^{(i)}}\\
+        &= \frac{2}{m}(o^{(i)} - y^{(i)})o^{(i)}(1-o^{(i)}) \quad \text{(for any i form 1 to m)}\\
+        \frac{\partial{l}}{\partial W^{[2]}} &= \sum_{i = 1}^m\frac{\partial{l}}{\partial z_2^{(i)}} \frac{\partial z_2^{(i)}}{\partial W^{[2]}} \\
+        &= \frac{2}{m} \sum_{i = 1}^m (o^{(i)} - y^{(i)}) o^{(i)}(1-o^{(i)}) (h^{(i)})^T\\
+    \end{aligned}
+    $$
+
+
+    $$
+    \begin{aligned}    
+        \frac{\partial l}{\partial z_1^{(i)}} &= \frac{\partial{l}}{\partial z_2^{(i)}}\frac{\partial z_2^{(i)}}{\partial h}\frac{\partial h}{\partial z_1^{(i)}} \\
+        &=  \frac{2}{m}(o^{(i)} - y^{(i)}) o^{(i)}(1-o^{(i)}) (W^{[2]})^T \odot h^{(i)}(1 - h^{(i)}) \quad \text{(for any i form 1 to m)}\\
+        \frac{\partial l}{\partial W^{[1]}} &= \sum_{i = 1}^m \frac{\partial l}{\partial z_1^{(i)}} \frac{\partial z_1^{(i)}}{\partial W^{[1]}} \\
+        &= \sum_{i = 1}^m \frac{2}{m}(o^{(i)} - y^{(i)}) o^{(i)}(1-o^{(i)}) (W^{[2]})^T \odot h^{(i)}(1 - h^{(i)}) (x^{(i)})^T \\
+    \end{aligned}
+    $$
+
+    $$
+    \frac{\partial l}{\partial W^{[1]}_{1, 2}} = \frac{2}{m} w_2^{[2]} \sum_{i = 1}^m (o^{(i)} - y^{(i)}) o^{(i)}(1-o^{(i)}) \cdot h_2^{(i)}(1 - h_2^{(i)}) x^{(i)}_1 \\
+    $$
+    
+    $$
+    \begin{aligned}
+        W^{[1]}_{1, 2} &:= W^{[1]}_{1, 2} - \alpha \frac{\partial l}{\partial W^{[1]}_{1, 2}} \\
+        W^{[1]}_{1, 2} &:= W^{[1]}_{1, 2} - \alpha \frac{2}{m} w_2^{[2]} \sum_{i = 1}^m (o^{(i)} - y^{(i)}) o^{(i)}(1-o^{(i)}) \cdot h_2^{(i)}(1 - h_2^{(i)}) x^{(i)}_1 \\
+    \end{aligned}
+    $$
+\end{answer}
