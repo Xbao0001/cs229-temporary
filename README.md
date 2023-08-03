@@ -1,4 +1,4 @@
-# CS229(Autumn 2018) problem sets
+# CS229(Autumn 2018) problem sets (最近更新一下readme)
 
 - Syllabus: [here](http://cs229.stanford.edu/syllabus-autumn2018.html)
 - Youtube Playlist: [here](https://www.youtube.com/watch?v=jGwO_UgTS7I&list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU)
