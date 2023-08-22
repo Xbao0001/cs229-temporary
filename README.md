@@ -16,7 +16,7 @@
 ![gda1](./assets/gda1.png)
 ![gda2](./assets/gda2.png)
 
-2 代码实现:
+2. 代码实现:
 ```Python
 import numpy as np
 import util
