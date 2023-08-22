@@ -1,7 +1,7 @@
 # CS229(Autumn 2018) problem sets
 
 ## Overview
-这是我学习吴恩达机器学习（Stanford cs229）的记录。
+这是我学习吴恩达机器学习（Stanford cs229）的记录(深度学习见[cs231n](https://github.com/Xbao0001/cs231n-2021-temporary))。
 
 - 课程大纲: [here](http://cs229.stanford.edu/syllabus-autumn2018.html)
 - 课程视频: [youtube](https://www.youtube.com/watch?v=jGwO_UgTS7I&list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU)
